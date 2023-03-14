@@ -26,7 +26,8 @@ let tx = {
 
 wallet.signMessage("Hello World!!")
 .then(console.log)
-// // web3.eth.personal.unlockAccount
+
+// web3.eth.personal.unlockAccount
 // wallet.signTransaction
 
 wallet.sendTransaction(tx)
