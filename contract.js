@@ -1,9 +1,10 @@
 const ethers = require("ethers")
+require('dotenv').config()
 const CHAIN_ASSET = require("./abi.json")
 const contractAddress = '0x8F422A5007E7eD5A1CcA0FaE431cA6339780607b'
 
 let provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.g.alchemy.com/v2/yxTVTRR6InF-UkUmVC8mT81Humb67PDh')
-
+let wallet = new ethers.Wallet(process.env.pk, provider)
 let contract = new ethers.Contract(contractAddress, CHAIN_ASSET, provider)
 
 // console.log(contract)

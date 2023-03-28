@@ -1,11 +1,12 @@
 const { JsonRpcSigner } = require("@ethersproject/providers")
+require('dotenv').config()
 const ethers = require("ethers")
 
 let pankilEth = "0x4cb2B9c5828Ddd4C4ADb6B87af62d33F9d8c28D9"
 let provider = new ethers.providers.JsonRpcProvider('https://eth-goerli.g.alchemy.com/v2/KD-7Fr_2xV_vFsIOkWz0uPvB_XlYILBS')
-let pk = "c02c8579fb09ae11c21c747209e6d723861cc54bfb1df86645541ddd166028b0"
+let pk = process.env.pk
 
-let mnemonic = "snake spread pistol prepare avoid blade lecture open mosquito merit mobile exit"
+// let mnemonic = "snake spread pistol prepare avoid blade lecture open mosquito merit mobile exit"
 let walletMnemonic = ethers.Wallet.fromMnemonic(mnemonic)
 console.log("🚀 ~ file: signer.js:12 ~ walletMnemonic:", walletMnemonic.privateKey)
 
